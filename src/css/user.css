@@ -1,0 +1,133 @@
+.user__container {
+    display: flex;
+    position: relative;
+    /* width: 400px; */
+    height: 105px;
+    margin: 22.5px 0 22.5px 22.5px;
+    padding: 11px 13px 11.8px 18.9px;
+    box-shadow: 0 3px 15px 0 rgba(0, 0, 0, 0.09);
+    border: solid 1px #eaeef0;
+    background-color: white;
+}
+
+.user__container__left-side {
+    display: flex;
+    flex-direction: column;
+}
+
+.left-side__img-container {
+    width: 64px;
+    height: 64px;
+    background-color: #aaa;
+    border: 1px solid #aaa;
+    border-radius: 50%;
+    margin: 0 21.5px 1px 7px;
+    align-self: center;
+}
+
+.left-side__actions {
+    margin: 5px 0px 0.6px 0;
+}
+
+.left-side__btn {
+    margin: 5px 8px 8px 0;
+    border: none;
+    background-color: white;
+    color: #8997a4;
+}
+
+.user__container__right-side {
+    display: flex;
+    flex-direction: column;
+}
+
+.right-side__name {
+    height: 24px;
+    margin: 1px 1px 3px 23.5px;
+    font-family: 'Lato';
+    font-size: 20px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: italic;
+    line-height: 1.2;
+    letter-spacing: 1.1px;
+    text-align: left;
+    color: #313030;
+}
+
+.right-side__role {
+    height: 15px;
+    margin: 3px 0px 1px 23.5px;
+    font-family: 'Roboto';
+    font-size: 13px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.15;
+    letter-spacing: 0.72px;
+    text-align: left;
+    color: #313030;
+}
+
+.right-side__department {
+    height: 13px;
+    margin: 1px 76px 8px 23.5px;
+    font-family: Roboto;
+    font-size: 10px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.3;
+    letter-spacing: 0.55px;
+    text-align: left;
+    color: #5c6974;
+}
+
+.attendance {
+    display: inline;
+    margin: 1px 132px 2px 23.5px;
+    padding: 2px 7px 2px 9px;
+    height: 13px;
+    font-family: Lato;
+    font-size: 11px;
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.18;
+    letter-spacing: 0.61px;
+    text-align: left;
+    color: #27b40c;
+}
+
+.right-side__actions {
+    margin-right: 6px;
+    margin-bottom: 10px;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+
+.right-side__btn {
+    padding: 4px 7px;
+    margin: 5px;
+    background-color: #eaeef0;
+    color: #313030;
+    border-radius: 50%;
+    border: none;
+    text-align: center;
+}
+
+.right-side__btn-info {
+    padding: 4px 9px;
+    margin: 5px;
+    box-shadow: 0 3px 7px 0 rgba(0, 0, 0, 0.3);
+    background-color: #eaeef0;
+    color: #313030;
+    border-radius: 50%;
+    border: none;
+    text-align: center;
+}
+
+.btn:hover {
+    cursor: pointer;
+}
