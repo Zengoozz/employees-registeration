@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { useDispatch } from 'react-redux';
 import { userAdd } from './usersSlice';
 
-export default function AddUser({handleToggle}) {
+export default function AddUser({ handleToggle }) {
     const [newUser, setNewUser] = useState({
         name: '',
         startDate: '',
@@ -66,6 +66,7 @@ export default function AddUser({handleToggle}) {
 
     const handleUserAdd = () => {
         dispatch(userAdd(newUser))
+        handleToggle();
     }
 
 
@@ -111,6 +112,7 @@ export default function AddUser({handleToggle}) {
                                 id='startDate'
                                 type="text"
                                 name='startDate'
+                                placeholder='20/03/2020'
                                 value={newUser.startDate}
                                 onChange={handleAllChanges} />
 
@@ -120,6 +122,7 @@ export default function AddUser({handleToggle}) {
                                 id='email'
                                 type="text"
                                 name='email'
+                                placeholder='Email'
                                 value={newUser.email}
                                 onChange={handleAllChanges} />
                         </div>
@@ -206,9 +209,10 @@ export default function AddUser({handleToggle}) {
                     </div>
 
 
+                    <h3 className='section__title work-home'>Work From Home</h3>
                     <div className="work-home__container">
-                        <h3>Work From Home</h3>
                         <input
+                            className='checkbox'
                             type='checkbox'
                             id='workFromHome'
                             onChange={handleCheck}
