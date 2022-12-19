@@ -1,0 +1,47 @@
+
+.action-bar__container{
+    display: flex;
+    height: 30px;
+    margin: 55px;
+}
+
+.search-bar{
+    position: relative;
+    display: flex;
+    width: 100%;
+}
+
+.search-icon{
+    margin-left:25px;
+    align-self: center;
+    position: absolute;
+    color: #23aaeb;
+}
+
+.search-input{
+    width: 100%;
+    padding-left:50px;
+    height: 30px;
+    font-size: 13px;
+    font-family: 'Roboto';
+    line-height: 1.31;
+    border: none;
+    border-radius: 5px;
+}
+
+.toggler {
+    width: 100px;
+    margin-left: 12px;
+    font-family: 'Roboto';
+    font-size: 13px;
+    font-weight: 600;
+    line-height: 1.15;
+    border-radius: 5px;
+    background-color: #2764ac;
+    color: white;
+    border: none;
+}
+
+.add-icon{
+    margin-right:10px;
+}

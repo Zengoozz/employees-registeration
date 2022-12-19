@@ -111,11 +111,19 @@ const usersSlice = createSlice({
             reducer(state, action) {
                 return state.filter(user => user.id !== action.payload)
             }
+        },
+        usersFilter: {
+            reducer(state, action) {
+                state = state.filter((user) =>
+                    user.name.toLowerCase().includes(action.payload)
+                )
+                return state;
+            }
         }
 
     }
 });
 
 export const allUsers = (state) => state.users;
-export const { userAdd, userDelete } = usersSlice.actions;
+export const { userAdd, userDelete, usersFilter } = usersSlice.actions;
 export default usersSlice.reducer
