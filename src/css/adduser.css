@@ -26,7 +26,6 @@ select {
 
 .modal__container {
     width: 100vw;
-    height: 100vh;
     background-color: rgba(40, 104, 174, 0.43);
     -webkit-backdrop-filter: blur(3px);
     backdrop-filter: blur(3px);
@@ -39,17 +38,22 @@ select {
 }
 
 .add-user__container {
-    display: grid;
-    position: relative;
-    flex-direction: column;
-    flex-wrap: wrap;
     background-color: white;
-    width: 1174px;
-    height: 658px;
-    margin: 31px 227px 64px 237px;
-    padding: 11px 32.3px 88px 18.8px;
+    width: 1200px;
+    min-height: 650px;
+    margin: 45px 230px;
+    padding: 12px 30px 70px 20px;
     border-radius: 4px;
     box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.16);
+}
+
+.add-user__form {
+    display: grid;
+    grid-template-areas: 
+    'Personal Personal Personal'
+    'Office Office Office'
+    'Work';
+    position: relative;
 }
 
 .title {
@@ -151,39 +155,29 @@ select {
 }
 
 .work-home {
-    margin-bottom: 30px;
+    margin-bottom: 20px;
     margin-top: 15px;
 }
 
 .work-home__container {
     display: flex;
     align-items: center;
+    margin-bottom: 45px;
 }
 
 .checkbox {
-    position: relative;
+    margin-top: 10px;
     width: 15px;
     height: 15px;
-    background-color: white;
-    border: 1px solid rgba(0, 0, 0, 0.4);
-    border-radius: 3px;
-    margin-right: 6px;
 }
 
-.check-icon{
-    display: block;
-    position: absolute;
-    z-index: 1;
-    right: 0;
-    color: crimson;
-}
 
 .btns-area {
     position: absolute;
     bottom: 0;
     right: 0;
-    margin-bottom: 20px;
-    margin-right: 42px;
+    margin-bottom: 5px;
+    margin-right: 10px;
 }
 
 .btns-area>.btn {
@@ -219,7 +213,31 @@ select {
 }
 
 .save:disabled {
-    border: solid 1px #23aaeb90;
-    background-color: #23aaeb90;
+    border: solid 1px #23aaeb30;
+    background-color: #23aaeb50;
     cursor: not-allowed;
+}
+
+@media (max-width:900px) {
+    .add-user__container{
+        margin: 100px;
+    }
+    .add-user__form{
+        width: 100%;
+    }
+    .personal-info__container,
+    .office-info__container{
+        flex-direction: column;
+    }
+    .personal-info__first-column,
+    .personal-info__second-column,
+    .personal-info__third-column,
+    .office-info__first-column,
+    .office-info__second_column,
+    .btns-area{
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        margin-bottom: 10px;
+    }
 }

@@ -2,7 +2,6 @@
     display: flex;
     flex: 1;
     position: relative;
-    max-width: 350px;
     height: 105px;
     margin: 22.5px 22.5px 22.5px 22.5px;
     padding: 11px 13px 11.8px 18.9px;
@@ -131,10 +130,4 @@
 
 .btn:hover {
     cursor: pointer;
-}
-
-@media screen and (max-width:1600px ) {
-    .user__container {
-        max-width: 900px;
-    }
 }

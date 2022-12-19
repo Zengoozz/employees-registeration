@@ -74,8 +74,10 @@ export default function AddUser({ handleToggle }) {
         <div className="modal__container">
             <div className='add-user__container'>
                 <h2 className='title'>New Employee</h2>
-                <form>
-                    <h3 className='section__title personal-info'>Personal Info</h3>
+                <h3 className='section__title personal-info'>Personal Info</h3>
+                <form className='add-user__form'>
+
+
                     <div className="personal-info__container">
 
                         <div className="personal-info__first-column">
@@ -129,113 +131,119 @@ export default function AddUser({ handleToggle }) {
                     </div>
 
 
-                    <h3 className='section__title office'>Office Info</h3>
+                    <div className="office__container">
+                        <h3 className='section__title office'>Office Info</h3>
 
-                    <div className="office-info__row">
-                        <label htmlFor="office">Office</label>
-                        <select
-                            className=''
-                            id='office'
-                            type="text"
-                            name='office'
-                            value={newUser.office}
-                            onChange={handleAllChanges} >
-                            <option value='Select'></option>
-                            {officesOptions}
-                        </select>
-
-                    </div>
-                    <div className="office-info__container">
-                        <div className="office-info__first-column">
-
-                            <label htmlFor="department">Department</label>
+                        <div className="office-info__row">
+                            <label htmlFor="office">Office</label>
                             <select
                                 className=''
-                                id='department'
+                                id='office'
                                 type="text"
-                                name='department'
-                                value={newUser.department}
+                                name='office'
+                                value={newUser.office}
                                 onChange={handleAllChanges} >
                                 <option value='Select'></option>
-                                {departmentsOptions}
-                            </select>
-
-                            <label htmlFor="role">Role</label>
-                            <input
-                                className=''
-                                id='role'
-                                type="text"
-                                name='role'
-                                value={newUser.role}
-                                onChange={handleAllChanges} />
-
-                            <label htmlFor="directManager">Direct Manager</label>
-                            <select
-                                className=''
-                                id='directManager'
-                                type="text"
-                                name='directManager'
-                                value={newUser.directManager}
-                                onChange={handleAllChanges}>
-                                <option value='Select'></option>
-                                {managersOptions}
+                                {officesOptions}
                             </select>
 
                         </div>
+                        <div className="office-info__container">
+                            <div className="office-info__first-column">
 
-                        <div className="office-info__second_column">
+                                <label htmlFor="department">Department</label>
+                                <select
+                                    className=''
+                                    id='department'
+                                    type="text"
+                                    name='department'
+                                    value={newUser.department}
+                                    onChange={handleAllChanges} >
+                                    <option value='Select'></option>
+                                    {departmentsOptions}
+                                </select>
 
-                            <label htmlFor="attendanceProfile">Attendance Profile</label>
-                            <select
-                                className=''
-                                id='attendanceProfile'
-                                type="text"
-                                name='attendanceProfile'
-                                value={newUser.attendanceProfile}
-                                onChange={handleAllChanges}>
-                                <option value='Select'></option>
-                                {profilesOptions}
-                            </select>
+                                <label htmlFor="role">Role</label>
+                                <input
+                                    className=''
+                                    id='role'
+                                    type="text"
+                                    name='role'
+                                    value={newUser.role}
+                                    onChange={handleAllChanges} />
 
-                            <label htmlFor="position">Position</label>
+                                <label htmlFor="directManager">Direct Manager</label>
+                                <select
+                                    className=''
+                                    id='directManager'
+                                    type="text"
+                                    name='directManager'
+                                    value={newUser.directManager}
+                                    onChange={handleAllChanges}>
+                                    <option value='Select'></option>
+                                    {managersOptions}
+                                </select>
+
+                            </div>
+
+                            <div className="office-info__second_column">
+
+                                <label htmlFor="attendanceProfile">Attendance Profile</label>
+                                <select
+                                    className=''
+                                    id='attendanceProfile'
+                                    type="text"
+                                    name='attendanceProfile'
+                                    value={newUser.attendanceProfile}
+                                    onChange={handleAllChanges}>
+                                    <option value='Select'></option>
+                                    {profilesOptions}
+                                </select>
+
+                                <label htmlFor="position">Position</label>
+                                <input
+                                    className=''
+                                    id='position'
+                                    type="text"
+                                    name='position'
+                                    value={newUser.position}
+                                    onChange={handleAllChanges} />
+                            </div>
+                        </div>
+
+                    </div>
+
+
+                    <div className="work">
+
+                        <h3 className='section__title work-home'>Work From Home</h3>
+                        <div className="work-home__container">
                             <input
-                                className=''
-                                id='position'
-                                type="text"
-                                name='position'
-                                value={newUser.position}
-                                onChange={handleAllChanges} />
+                                className='checkbox'
+                                type='checkbox'
+                                id='workFromHome'
+                                onChange={handleCheck}
+                                name='workFromHome' />
+                            <label htmlFor="workFromHome">Allow Employee To Work From Home</label>
+                        </div>
+                        <div className='btns-area'>
+                            <button
+                                className='cancel btn'
+                                onClick={handleToggle}
+                                type='button'>
+                                Cancel
+                            </button>
+                            <button
+                                className='save btn'
+                                onClick={handleUserAdd}
+                                disabled={!enableButton}
+                                type='button'>
+                                Save
+                            </button>
                         </div>
                     </div>
 
 
-                    <h3 className='section__title work-home'>Work From Home</h3>
-                    <div className="work-home__container">
-                        <input
-                            className='checkbox'
-                            type='checkbox'
-                            id='workFromHome'
-                            onChange={handleCheck}
-                            name='workFromHome' />
-                        <label htmlFor="workFromHome">Allow Employee To Work From Home</label>
-                    </div>
-
-
-                    <div className='btns-area'>
-                        <button
-                            className='cancel btn'
-                            onClick={handleToggle}
-                            type='button'>
-                            Cancel
-                        </button>
-                        <button
-                            className='save btn'
-                            onClick={handleUserAdd}
-                            disabled={!enableButton}
-                            type='button'>
-                            Save
-                        </button>
-                    </div>
                 </form>
             </div>
         </div>

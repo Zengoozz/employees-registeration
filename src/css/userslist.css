@@ -1,8 +1,23 @@
-
-
-
 .users-list__container {
-    align-content: flex-end;
-    display: flex;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
     flex-wrap: wrap;
+}
+
+@media (max-width:1600px) {
+    .users-list__container {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+}
+
+@media (max-width:1250px) {
+    .users-list__container {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width:900px) {
+    .users-list__container {
+        grid-template-columns: 1fr;
+    }
 }

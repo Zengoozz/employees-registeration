@@ -16,6 +16,7 @@
 
 .app__full{
   display: flex;
+  height: 100vh;
 }
 
 .app__part{

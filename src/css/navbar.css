@@ -1,6 +1,6 @@
 .nav-bar__container {
     width: 100px;
-    height: 100vh;
+    max-height: 100vh;
     box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.16);
     background-image: linear-gradient(to bottom, #39a4dc, #2763ab);
 }
