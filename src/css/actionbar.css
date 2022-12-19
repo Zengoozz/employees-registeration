@@ -2,7 +2,7 @@
 .action-bar__container{
     display: flex;
     height: 30px;
-    margin: 55px;
+    margin: 55px 40px 0 40px;
 }
 
 .search-bar{
@@ -44,4 +44,11 @@
 
 .add-icon{
     margin-right:10px;
+}
+
+.toggler:hover{
+    background-color: white;
+    color: #2764ac;
+    border: 3px solid#2764ac;
+    cursor: pointer;
 }

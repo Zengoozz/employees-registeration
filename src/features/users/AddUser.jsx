@@ -228,13 +228,13 @@ export default function AddUser({ handleToggle }) {
                         </div>
                         <div className='btns-area'>
                             <button
-                                className='cancel btn'
+                                className='form-btn btn-cancel'
                                 onClick={handleToggle}
                                 type='button'>
                                 Cancel
                             </button>
                             <button
-                                className='save btn'
+                                className='form-btn btn-save'
                                 onClick={handleUserAdd}
                                 disabled={!enableButton}
                                 type='button'>

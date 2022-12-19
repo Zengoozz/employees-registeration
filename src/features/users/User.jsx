@@ -42,15 +42,15 @@ export default function User({ user }) {
                 <img className='left-side__img-container'
                     src="" alt="" />
                 <span className='left-side__actions'>
-                    <button className='left-side__btn'>
+                    <button className='left-side__btn btn-edit'>
                         <FontAwesomeIcon icon={faPen} />
                     </button>
-                    <button className='left-side__btn'>
+                    <button className='left-side__btn btn-pause'>
                         <FontAwesomeIcon icon={faCirclePause} />
                     </button>
                     <button 
                     onClick={handleDeleteUser}
-                    className='left-side__btn'>
+                    className='left-side__btn btn-delete'>
                         <FontAwesomeIcon icon={faTrash} />
                     </button>
                 </span>
@@ -71,15 +71,15 @@ export default function User({ user }) {
             </div>
             <span className='right-side__actions'>
                 <button
-                    className='right-side__btn'>
+                    className='right-side__btn btn-phone'>
                     <FontAwesomeIcon icon={faPhone} />
                 </button>
                 <button
-                    className='right-side__btn'>
+                    className='right-side__btn btn-email'>
                     <FontAwesomeIcon icon={faEnvelope} />
                 </button>
                 <button
-                    className='right-side__btn-info'>
+                    className='right-side__btn btn-info'>
                     <FontAwesomeIcon icon={faExclamation} />
                 </button>
             </span>

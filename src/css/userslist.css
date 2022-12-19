@@ -1,10 +1,13 @@
 .users-list__container {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
-    flex-wrap: wrap;
+    padding: 50px 40px 10px 40px;
+    gap: 45px;
+    row-gap: 35px;
 }
 
-@media (max-width:1600px) {
+
+@media (max-width:1650px) {
     .users-list__container {
         grid-template-columns: 1fr 1fr 1fr;
     }
