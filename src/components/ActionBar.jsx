@@ -3,7 +3,7 @@ import { faSearch, faPlus } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useDispatch } from 'react-redux';
 
-import {usersFilter} from '../users/usersSlice'
+import {usersFilter} from '../features/users/usersSlice'
 
 
 export default function ActionBar({ handleToggle }) {

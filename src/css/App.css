@@ -1,7 +1,8 @@
-@import './css/user.css';
-@import './css/userslist.css';
-@import './css/adduser.css';
-@import './css/actionbar.css';
+@import './user.css';
+@import './userslist.css';
+@import './adduser.css';
+@import './actionbar.css';
+@import './navbar.css';
 
 @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@1,700&family=Roboto:wght@400;700&display=swap');
 *,
@@ -11,4 +12,14 @@
   box-sizing: border-box;
   outline: none;
   border: none;
+}
+
+.app__full{
+  display: flex;
+}
+
+.app__part{
+  display:flex;
+  flex-direction: column;
+  width: 100%;
 }
