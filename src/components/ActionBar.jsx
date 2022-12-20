@@ -11,6 +11,7 @@ export default function ActionBar({ handleToggle }) {
     const dispatch = useDispatch();
     const currentUsers = useSelector(allUsers)
     const searchWord = useRef('')
+    // eslint-disable-next-line no-unused-vars
     const [users,setUsers] = useState(currentUsers)
     
 
