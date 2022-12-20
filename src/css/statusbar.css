@@ -1,0 +1,79 @@
+.status-bar__container {
+    display: flex;
+    flex-direction: row-reverse;
+    margin: 10px 40px 0 40px;
+}
+
+.user-info__container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 13px;
+}
+
+.user-btn{
+    margin-left: 14px;
+}
+
+.notification-btn{
+    margin-left: 35px;
+    border-left: solid 0.5px #e8e4e4;
+    border-right: solid 0.5px #e8e4e4;
+}
+
+.icon{
+    padding: 1px 5px 1px 4px;
+    color: #8997a4;
+}
+
+.user-info__img {
+    width: 32px;
+    height: 32px;
+    background-color: #aaa;
+    border: 1px solid #aaa;
+    border-radius: 50%;
+}
+
+.user-info__name{
+    margin-left:8px;
+    font-family: 'Roboto';
+    font-size: 20px;
+    line-height: 1.2;
+    color: #8997a4;
+}
+
+.user-actions__container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.user-actions__date{
+    font-family: 'Roboto';
+    font-size: 15px;
+    line-height: 1.2;
+    letter-spacing: 0.83;
+    color:#474747
+}
+
+.session-btn{
+    margin-left:50px ;
+    padding: 7px 26px 5px 28px;
+    font-family: 'Roboto';
+    font-size: 13px;
+    line-height: 1.15;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    background-color: #27b40c;
+}
+
+.session-btn:hover{
+    background-color: #259c0d;
+    cursor: pointer;
+}
+
+.icon:hover{
+    color: #474747;
+    cursor: pointer;
+}

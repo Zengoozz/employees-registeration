@@ -4,6 +4,7 @@ import '../css/App.css';
 import ActionBar from './ActionBar';
 import UsersList from '../features/users/UsersList';
 import NavBar from './NavBar';
+import StatusBar from './StatusBar';
 
 function App() {
 
@@ -16,8 +17,13 @@ function App() {
     <div className="app__full">
       <NavBar />
       <div className="app__part">
-        <ActionBar handleToggle={handleToggle} />
-        <UsersList handleToggle={handleToggle} toggle={toggle} />
+        <div className='header'>
+          <StatusBar />
+        </div>
+        <div className="app-body">
+          <ActionBar handleToggle={handleToggle} />
+          <UsersList handleToggle={handleToggle} toggle={toggle} />
+        </div>
       </div>
     </div>
   );

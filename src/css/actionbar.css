@@ -2,7 +2,7 @@
 .action-bar__container{
     display: flex;
     height: 30px;
-    margin: 55px 40px 0 40px;
+    margin: 30px 40px 0 40px;
 }
 
 .search-bar{
