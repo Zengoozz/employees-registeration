@@ -52,3 +52,8 @@
     border: 3px solid#2764ac;
     cursor: pointer;
 }
+.search-input:focus{
+    border: none;
+    outline: none;
+    border-bottom: 3px solid#2764ac;
+}

@@ -216,12 +216,14 @@ select {
 
 .btn-save:hover{
     color: #23aaeb;
-    border: 3px solid #23aaeb
+    border: 3px solid #23aaeb;
+    cursor: pointer;
 }
 
 .btn-cancel:hover{
     color: #ff6a6a;
-    border: 3px solid #ff6a6a
+    border: 3px solid #ff6a6a;
+    cursor: pointer;
 }
 
 .btn-save:disabled {
@@ -232,6 +234,13 @@ select {
 
 .checkbox:hover {
     cursor: pointer;
+}
+
+.modal__container input:focus,
+.modal__container select:focus{
+    border:none;
+    outline: none;
+    border-bottom:3px solid orangered;
 }
 
 @media (max-width:900px) {

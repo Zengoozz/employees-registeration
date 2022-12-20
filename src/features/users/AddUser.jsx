@@ -56,12 +56,14 @@ export default function AddUser({ handleToggle }) {
             }
         })
     }
-
+    const validEmail = newUser.email.match(/[a-z0-9]+@[a-z]+\.[a-z]{2,3}/)
     const enableButton = Boolean(newUser.department) && Boolean(newUser.name)
         && Boolean(newUser.startDate) && Boolean(newUser.email) && Boolean(newUser.position)
         && newUser.name !== '' && newUser.startDate !== ''
         && newUser.email !== '' && newUser.department !== ''
-        && newUser.position !== '' && newUser.department !== 'Select'
+        && newUser.position !== '' && newUser.department !== 'Select' &&  Boolean(validEmail)
+
+
 
 
     const handleUserAdd = () => {
@@ -118,7 +120,7 @@ export default function AddUser({ handleToggle }) {
                                 className=''
                                 autoComplete='off'
                                 id='startDate'
-                                type="text"
+                                type="date"
                                 name='startDate'
                                 placeholder='20/03/2020'
                                 value={newUser.startDate}
@@ -129,7 +131,7 @@ export default function AddUser({ handleToggle }) {
                                 className=''
                                 autoComplete='off'
                                 id='email'
-                                type="text"
+                                type="email"
                                 name='email'
                                 placeholder='Email'
                                 value={newUser.email}
