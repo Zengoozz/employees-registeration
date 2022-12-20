@@ -58,15 +58,18 @@ export default function AddUser({ handleToggle }) {
     }
 
     const enableButton = Boolean(newUser.department) && Boolean(newUser.name)
-        && Boolean(newUser.phone) && Boolean(newUser.startDate)
-        && Boolean(newUser.email) && Boolean(newUser.office)
-        && Boolean(newUser.role) && Boolean(newUser.directManager)
-        && Boolean(newUser.attendanceProfile) && Boolean(newUser.position)
+        && Boolean(newUser.startDate) && Boolean(newUser.email) && Boolean(newUser.position)
+        && newUser.name !== '' && newUser.startDate !== ''
+        && newUser.email !== '' && newUser.department !== ''
+        && newUser.position !== '' && newUser.department !== 'Select'
 
 
     const handleUserAdd = () => {
-        dispatch(userAdd(newUser))
-        handleToggle();
+        if (enableButton) {
+            console.log(newUser.department)
+            dispatch(userAdd(newUser))
+            handleToggle();
+        }
     }
 
 
@@ -89,6 +92,7 @@ export default function AddUser({ handleToggle }) {
                             <label htmlFor="name">Name</label>
                             <input
                                 className=''
+                                autoComplete='off'
                                 id='name'
                                 type="text"
                                 name='name'
@@ -98,6 +102,7 @@ export default function AddUser({ handleToggle }) {
                             <label htmlFor="phone">Phone</label>
                             <input
                                 className=''
+                                autoComplete='off'
                                 id='phone'
                                 type="text"
                                 name='phone'
@@ -111,6 +116,7 @@ export default function AddUser({ handleToggle }) {
                             <label htmlFor="startDate">Start Date</label>
                             <input
                                 className=''
+                                autoComplete='off'
                                 id='startDate'
                                 type="text"
                                 name='startDate'
@@ -121,6 +127,7 @@ export default function AddUser({ handleToggle }) {
                             <label htmlFor="email">Email</label>
                             <input
                                 className=''
+                                autoComplete='off'
                                 id='email'
                                 type="text"
                                 name='email'
@@ -166,6 +173,7 @@ export default function AddUser({ handleToggle }) {
                                 <label htmlFor="role">Role</label>
                                 <input
                                     className=''
+                                    autoComplete='off'
                                     id='role'
                                     type="text"
                                     name='role'
@@ -203,6 +211,7 @@ export default function AddUser({ handleToggle }) {
                                 <label htmlFor="position">Position</label>
                                 <input
                                     className=''
+                                    autoComplete='off'
                                     id='position'
                                     type="text"
                                     name='position'
