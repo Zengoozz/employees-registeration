@@ -77,3 +77,16 @@
     color: #474747;
     cursor: pointer;
 }
+
+.user-actions__date:hover{
+    text-decoration: underline;
+    color:#474747
+}
+
+.user-info__img:hover{
+    filter: brightness(90%);
+}
+
+.user-info__name:hover{
+    font-weight: 600;
+}
