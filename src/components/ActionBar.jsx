@@ -18,7 +18,7 @@ export default function ActionBar({ handleToggle }) {
 
     const filterUsers = (event) => {
         const word = event.target.value
-        const searchedUsers = users.slice().filter((user)=> (user.name).toLowerCase().includes(word))
+        const searchedUsers = users.slice().filter((user)=> (user.name).toLowerCase().includes(word.toLowerCase()))
         dispatch(usersSet(searchedUsers))
     }
 
