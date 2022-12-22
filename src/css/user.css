@@ -3,10 +3,10 @@
     flex: 1;
     position: relative;
     height: 105px;
-    /* margin: 22.5px 0px 22.5px 22.5px; */
     padding: 11px 13px 11.8px 18.9px;
     box-shadow: 0 3px 15px 0 rgba(0, 0, 0, 0.09);
     border: solid 1px #eaeef0;
+    border-radius: 15px;
     background-color: white;
 }
 
@@ -55,7 +55,7 @@
     color: #313030;
 }
 
-.right-side__role {
+.right-side__position {
     height: 15px;
     margin: 3px 0px 1px 23.5px;
     font-family: 'Roboto';
@@ -108,7 +108,7 @@
 }
 
 .right-side__btn {
-    padding: 4px 7px;
+    padding: 4px 6px;
     margin: 5px;
     background-color: #eaeef0;
     color: #313030;
@@ -130,34 +130,45 @@
 
 
 
+.tool-tip__container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 25px;
+    row-gap: 5px;
+}
+
+.user__container:hover {
+    box-shadow: 0 3px 15px 0 rgba(0, 0, 0, 0.39);
+}
+
 .right-side__btn:hover,
-.left-side__btn:hover{
+.left-side__btn:hover {
     cursor: pointer;
 }
 
-.btn-edit:hover{
+.btn-edit:hover {
     color: #27b40c;
 }
 
-.btn-pause:hover{
-    color:orange
+.btn-pause:hover {
+    color: orange
 }
 
-.btn-delete:hover{
+.btn-delete:hover {
     color: crimson;
 }
 
-.btn-phone:hover{
+.btn-phone:hover {
     background-color: #27b40c;
     color: white;
 }
 
-.btn-email:hover{
+.btn-email:hover {
     background-color: orange;
     color: white;
 }
 
-.btn-info:hover{
+.btn-info:hover {
     background-color: crimson;
     color: white;
 }

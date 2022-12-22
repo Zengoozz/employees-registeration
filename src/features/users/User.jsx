@@ -3,8 +3,11 @@ import { useDispatch } from 'react-redux';
 
 import { faPen, faCirclePause, faTrash, faExclamation, faEnvelope, faPhone } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import Tooltip from '@mui/material/Tooltip';
+
 
 import { userDelete } from './usersSlice';
+import UserToolTip from './UserToolTip';
 
 export default function User({ user }) {
 
@@ -12,9 +15,13 @@ export default function User({ user }) {
     const {
         id,
         name,
-        role,
+        position,
         department,
-        attendanceProfile
+        attendanceProfile,
+        office,
+        role,
+        directManager,
+        startDate
     } = user
 
     const setAttendanceColor =
@@ -31,10 +38,23 @@ export default function User({ user }) {
                     : attendanceProfile === 'Weekend' ? '#2764ac29'
                         : attendanceProfile === 'Holiday' ? '#23aaeb29' : 'black'
 
-    
+
     const handleDeleteUser = () => {
         dispatch(userDelete(id))
     }
+
+    const toolTipInfo = {
+        'Office': office,
+        'Role': role,
+        'Direct Manager': directManager,
+        'Start Date': startDate
+    }
+    const toolTipBody = Object.entries(toolTipInfo).map(([key, value],index) =>  (
+        <UserToolTip key={index} title={key} value={value} />
+    ));
+
+
+    console.log(toolTipBody)
 
     return (
         <div className='user__container'>
@@ -48,16 +68,16 @@ export default function User({ user }) {
                     <button className='left-side__btn btn-pause'>
                         <FontAwesomeIcon icon={faCirclePause} />
                     </button>
-                    <button 
-                    onClick={handleDeleteUser}
-                    className='left-side__btn btn-delete'>
+                    <button
+                        onClick={handleDeleteUser}
+                        className='left-side__btn btn-delete'>
                         <FontAwesomeIcon icon={faTrash} />
                     </button>
                 </span>
             </div>
             <div className='user__container__right-side'>
                 <h2 className='right-side__name' >{name}</h2>
-                <p className='right-side__role'>{role}</p>
+                <p className='right-side__position'>{position}</p>
                 <p className='right-side__department'>{department}</p>
                 <p
                     style={
@@ -78,10 +98,12 @@ export default function User({ user }) {
                     className='right-side__btn btn-email'>
                     <FontAwesomeIcon icon={faEnvelope} />
                 </button>
-                <button
-                    className='right-side__btn btn-info'>
-                    <FontAwesomeIcon icon={faExclamation} />
-                </button>
+                <Tooltip className='tip-tip' title={<div className='tool-tip__container'>{toolTipBody}</div>} arrow>
+                    <button
+                        className='right-side__btn btn-info'>
+                        <FontAwesomeIcon icon={faExclamation} />
+                    </button>
+                </Tooltip>
             </span>
         </div>
     )

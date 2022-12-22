@@ -1,0 +1,11 @@
+.item-title{
+    color: #bccddd;
+    font-weight: 600;
+    margin-bottom: 0;
+    margin-top: 5px;
+    text-transform: uppercase;
+}
+
+.item-value{
+    margin: 5px auto;
+}
