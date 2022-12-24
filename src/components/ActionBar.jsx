@@ -1,10 +1,11 @@
-import React, { useState,useRef } from 'react'
-import { faSearch, faPlus } from '@fortawesome/free-solid-svg-icons';
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import React, { useState, useRef } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
 
-import { allUsers, usersSet } from '../features/users/usersSlice'
+import { faSearch, faPlus } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
+import { allUsers, usersSet, usersOrderByExistance, usersOrderByAttendance } from '../features/users/usersSlice'
+import OrderMenu from './OrderMenu';
 
 export default function ActionBar({ handleToggle }) {
 
@@ -12,15 +13,18 @@ export default function ActionBar({ handleToggle }) {
     const currentUsers = useSelector(allUsers)
     const searchWord = useRef('')
     // eslint-disable-next-line no-unused-vars
-    const [users,setUsers] = useState(currentUsers)
-    
+    const [users, setUsers] = useState(currentUsers)
+
 
 
     const filterUsers = (event) => {
         const word = event.target.value
-        const searchedUsers = users.slice().filter((user)=> (user.name).toLowerCase().includes(word.toLowerCase()))
+        const searchedUsers = users.slice().filter((user) => (user.name).toLowerCase().includes(word.toLowerCase()))
         dispatch(usersSet(searchedUsers))
     }
+
+    const orderByAttendance = () => dispatch(usersOrderByAttendance())
+    const orderByNewest = () => dispatch(usersOrderByExistance())
 
     return (
         <div className='action-bar__container'>
@@ -45,6 +49,7 @@ export default function ActionBar({ handleToggle }) {
                     icon={faPlus} />
                 Add new
             </button>
-        </div>
+            <OrderMenu orderByAttendance={orderByAttendance} orderByNewest={orderByNewest}/>
+        </div >
     )
 }

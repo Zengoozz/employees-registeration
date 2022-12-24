@@ -15,6 +15,8 @@ export default function User({ user }) {
     const {
         id,
         name,
+        email,
+        phone,
         position,
         department,
         attendanceProfile,
@@ -49,12 +51,10 @@ export default function User({ user }) {
         'Direct Manager': directManager,
         'Start Date': startDate
     }
-    const toolTipBody = Object.entries(toolTipInfo).map(([key, value],index) =>  (
+    const toolTipBody = Object.entries(toolTipInfo).map(([key, value], index) => (
         <UserToolTip key={index} title={key} value={value} />
     ));
 
-
-    console.log(toolTipBody)
 
     return (
         <div className='user__container'>
@@ -90,14 +90,18 @@ export default function User({ user }) {
                 </p>
             </div>
             <span className='right-side__actions'>
-                <button
-                    className='right-side__btn btn-phone'>
-                    <FontAwesomeIcon icon={faPhone} />
-                </button>
-                <button
-                    className='right-side__btn btn-email'>
-                    <FontAwesomeIcon icon={faEnvelope} />
-                </button>
+                <a href={`tel:${phone}`}>
+                    <button
+                        className='right-side__btn btn-phone'>
+                        <FontAwesomeIcon icon={faPhone} />
+                    </button>
+                </a>
+                <a href={`mailto:${email}`}>
+                    <button
+                        className='right-side__btn btn-email'>
+                        <FontAwesomeIcon icon={faEnvelope} />
+                    </button>
+                </a>
                 <Tooltip className='tip-tip' title={<div className='tool-tip__container'>{toolTipBody}</div>} arrow>
                     <button
                         className='right-side__btn btn-info'>

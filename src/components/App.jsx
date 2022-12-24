@@ -1,6 +1,7 @@
 import { useState } from 'react';
 
 import '../css/App.css';
+import '@fontsource/public-sans';
 import ActionBar from './ActionBar';
 import UsersList from '../features/users/UsersList';
 import NavBar from './NavBar';

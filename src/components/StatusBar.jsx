@@ -1,4 +1,5 @@
 import { format } from 'date-fns'
+
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import NotificationsIcon from '@mui/icons-material/Notifications';
 
@@ -18,7 +19,7 @@ export default function StatusBar() {
       <span className="user-actions__container">
         <p className='user-actions__date'>{formatDate}</p>
         <button className='session-btn'>Sign In</button>
-        <NotificationsIcon className='notification-btn icon' />
+        <NotificationsIcon className='notification-btn icon'/>
       </span>
     </div>
   )

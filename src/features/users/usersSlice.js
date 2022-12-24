@@ -40,11 +40,28 @@ const usersSlice = createSlice({
                 state = action.payload
                 return state;
             }
+        },
+        usersOrderByExistance: {
+            reducer(state){
+                return state.slice().sort((a, b) => (b.lastModified).localeCompare(a.lastModified))
+            }
+        },
+        usersOrderByAttendance:{
+            reducer(state){
+                const attSort = {
+                    'Present':0,
+                    'On Leave': 1,
+                    'Absent': 2,
+                    'Weekend': 3,
+                    'Holiday': 4,
+                }
+                return state.slice().sort((a,b) => attSort[a.attendanceProfile] > attSort[b.attendanceProfile])
+            }
         }
 
     }
 });
 
 export const allUsers = (state) => state.users;
-export const { userAdd, userDelete, usersSet } = usersSlice.actions;
+export const { userAdd, userDelete, usersSet, usersOrderByExistance, usersOrderByAttendance } = usersSlice.actions;
 export default usersSlice.reducer

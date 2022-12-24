@@ -1,3 +1,4 @@
+@import './ordermenu';
 
 .action-bar__container{
     display: flex;
